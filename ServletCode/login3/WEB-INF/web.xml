@@ -1,0 +1,30 @@
+<web-app>
+	<context-param>
+		<param-name>drivername</param-name>
+		<param-value>oracle.jdbc.OracleDriver</param-value>
+	</context-param>
+	<context-param>
+		<param-name>connurl</param-name>
+		<param-value>jdbc:oracle:thin:@//Aman_Tiwari:1521/xe</param-value>
+	</context-param>
+	<context-param>
+		<param-name>username</param-name>
+		<param-value>advjava</param-value>
+	</context-param>
+	<context-param>
+		<param-name>password</param-name>
+		<param-value>java</param-value>
+	</context-param>
+	<servlet>
+		<servlet-class>LoginServlet3</servlet-class>
+		<servlet-name>LoginServlet3</servlet-name>
+	<init-param>
+		<param-name>dbqry</param-name>
+		<param-value>select username from users where userid = ? and password = ? </param-value>
+	</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LoginServlet3</servlet-name>
+		<url-pattern>/LoginServlet3</url-pattern>
+	</servlet-mapping>
+</web-app>
